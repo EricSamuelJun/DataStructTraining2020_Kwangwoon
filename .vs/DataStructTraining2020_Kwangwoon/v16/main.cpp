@@ -1,6 +1,7 @@
 #include "Reservation.h"
 #include "Room.h"
 #include "dbms.h"
+#include "maintest.cpp"
 #include <iostream>
 using namespace std;
 
@@ -15,6 +16,7 @@ int main(int argc, char *argv[]) {
     // 2. DataConnecting
     // 3. callScreen
     // 4.
+    maintest();
 
     return 0;
 }
