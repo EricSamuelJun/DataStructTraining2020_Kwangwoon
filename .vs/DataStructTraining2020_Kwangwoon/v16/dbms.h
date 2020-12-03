@@ -2,6 +2,7 @@
 #include <string>
 #include "Room.h"
 #include "Reservation.h"
+#include "alarm_client.cpp"
 #include <vector>
 int dbmsConnection();
 
@@ -18,3 +19,7 @@ std::vector<Service> ServiceSetting(std::vector<Service> m);
 bool dbLoad();
 
 bool dbSave();
+
+int alarm_client();
+
+void howToAlarm();
