@@ -1,5 +1,4 @@
 #pragma once
-#include "Reservation.h"
 #include <string>
 class Service
 {
@@ -18,5 +17,10 @@ private:
 	int addcost;
 public:
 	Service(int idx);
+	void setConent(std::string mcontent);
+	void setCost(int mcost);
+	int getCost();
+	std::string getContent();
+	std::string toString();
 };
 

@@ -21,13 +21,19 @@ enum RoomGrade
 /// </summary>
 enum Bed
 {
-	sofa = -1,
 	single = 0,
 	supersingle = 1,
 	doub = 2,
 	queen = 3,
 	king = 4,
-	family = 5
+	family = 5,
+	sofabed = -1,
+	lakulaku = -2,
+	bunkbed = -3,
+	waterbed = -4,
+	lovebed = -5,
+	stonebed = -6
+
 };
 /// <summary>
 /// 방 클래스
@@ -67,12 +73,14 @@ private:
 	/// 침대 있는 것 들
 	/// </summary>
 	std::vector<Bed> beds;
+	int roomCost;
 public:
-	Room(int roomNum,RoomGrade rg, int defn, int maxn);
+	Room(int roomNum,RoomGrade rg, int defn = 0 , int maxn =0);
 #pragma region setMethod
 	void setcontent(std::string tcontent);
 	void addBeds(Bed bed);
 	void setSofabed(bool sofa);
+	void setCost(int cost) { roomCost = cost; }
 #pragma endregion
 
 #pragma region getMethod
@@ -82,8 +90,12 @@ public:
 	int getBedCnt();
 	std::vector<Bed> getBeds();
 	int getRoomNum();
+	int getCost() { return roomCost; }
+	int getDefNum() { return defaultNumOfPeople; }
+	int getMaxNum() { return maxmanNumOfPeople; }
+	int getBedsize() { return beds.size(); }
+	std::string getBedstring();
+	int getintsofabed() { int re;  isSofabed == true ?  re = 1 : re = 10; return re; }
+	std::string getContent() { return content; }
 #pragma endregion
-
-
 };
-
